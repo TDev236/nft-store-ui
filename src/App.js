@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { Colors } from "./assets/Theme";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavMenu from "./assets/components/NavMenu";
+import HomePage from "./assets/components/HomePage";
+import StorePage from "./assets/components/StorePage";
+import ProductPage from "./assets/components/ProductPage";
+
+const AppEl = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+`;
+
+const Title = styled.h1`
+  color: ${Colors.Primary};
+  border: 2px solid ${Colors.Primary};
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+`;
+
+const Pages = styled.div`
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppEl>
+        <Pages>
+          <Routes>
+            <Route excat path="/store" element = {<StorePage/>}/>
+            <Route excat path="/product" element = {<ProductPage/>}/>
+            <Route excat path="/" element = {<HomePage/>}/>
+          </Routes>
+        </Pages>
+        <NavMenu/>
+      </AppEl>
+    </Router>
+    
   );
 }
 
