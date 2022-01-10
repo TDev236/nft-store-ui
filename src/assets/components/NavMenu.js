@@ -3,8 +3,8 @@ import { FiHome } from 'react-icons/fi';
 import { AiOutlineUser } from 'react-icons/ai';
 import { BiStore } from 'react-icons/bi';
 import { Colors } from "../Theme.js";
-import { useLocation, useNavigate } from 'react-router-dom';
-import StorePage from './StorePage.js';
+import { useNavigate } from 'react-router-dom';
+
 
 const NavMenuEl=styled.nav`
     display: flex;

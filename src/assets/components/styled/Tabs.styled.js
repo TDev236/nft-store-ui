@@ -2,12 +2,6 @@ import { useState } from 'react';
 import styled from "styled-components";
 import { Colors } from '../../Theme';
 
-const i = [
-    { id: 1, title:'Destacado', content:<div>Tab1</div>},
-    { id: 2, title:'Colecciones', content:<div>Tab2</div>},
-    { id: 3, title:'Artistas', content:<div>Tab3</div>},
-    { id: 4, title:'Etiquetas', content:<div>Tab4</div>},
-];
 const TabsEl = styled.div`
     width: 100%;
 `;
